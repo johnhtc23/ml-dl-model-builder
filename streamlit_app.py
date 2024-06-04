@@ -9,8 +9,49 @@ import time
 import zipfile
 
 # Page title
-st.set_page_config(page_title='ML Model Building', page_icon='🤖')
+st.set_page_config(page_title='ML Model Building', page_icon='🤖', layout='wide')  # Set layout to wide for better use of space
 st.title('🤖 ML Model Building')
+
+# Add this CSS code block within a function and call it before your main app logic
+def set_luxurious_purple_theme():
+  """
+  Sets the Streamlit app theme to luxurious purple.
+  """
+  st.markdown("""
+  <style>
+    body {
+      background-color: #d8b9ff;
+      color: #201430;
+      font-family: 'Amatic SC', cursive;
+    }
+    .css-g4t7lw {  /* Streamlit app container */
+      background-color: #d8b9ff;
+      color: #201430;
+    }
+    .css-1d6feon {  /* Titles */
+      color: #9447f0;
+    }
+    .css-1r38045 {  /* Headings */
+      color: #9447f0;
+    }
+    .css-o5vhid {  /* Information text */
+      color: #201430;
+    }
+    .css-18e3yix {  /* Code blocks */
+      background-color: #e8d0ff;
+      color: #201430;
+    }
+    .css-18e3yix pre {  /* Code text within code blocks */
+      color: #201430;
+    }
+    .element-container > div:nth-child(even) {  /* Alternate row background color in DataFrames */
+      background-color: #e8d0ff;
+    }
+  </style>
+  """, unsafe_allow_html=True)
+
+# Call the function to set the theme before your app logic begins
+set_luxurious_purple_theme()
 
 with st.expander('About this app'):
   st.markdown('**What can this app do?**')
